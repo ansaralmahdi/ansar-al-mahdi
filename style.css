@@ -1,12 +1,15 @@
-img {
-    max-width: 100%;
-    height: auto;
-}body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
-}
-h1 {
-    color: #007bff;
+
+       
+   </div>.image-box { 
+    position: relative; 
+    overflow: hidden; /* رفع خطای نقطه اضافی */
+    border-radius: 10px; 
+} 
+
+.image-box img { 
+    transition: transform 0.3s; 
+} 
+
+.image-box:hover img { 
+    transform: scale(1.05); 
 }
