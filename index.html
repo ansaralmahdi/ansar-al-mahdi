@@ -1,4 +1,3 @@
-
 ```html
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
@@ -10,12 +9,13 @@
             font-family: 'Tahoma', sans-serif;
             max-width: 800px;
             margin: 20px auto;
-            padding: 0 15px;
+            padding: 20px;
             direction: rtl;
+            background-color: #87CEEB; /* پس زمینه آبی آسمانی */
         }
         .header-banner {
-            background-color: #0066cc; /* پس زمینه آبی پررنگ */
-            color: rgba(255,255,255,0.8); /* متن کمرنگ */
+            background-color: #0066cc;
+            color: rgba(255,255,255,0.9);
             padding: 25px;
             border-radius: 8px;
             text-align: center;
@@ -27,34 +27,43 @@
         }
         .section {
             margin: 25px 0;
-            padding: 15px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .placeholder {
-            color: #999;
+            color: #666;
             font-style: italic;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 12px 0;
+            padding: 8px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <!-- بخش هدر با استایل ویژه -->
     <div class="header-banner">
         <h1 class="main-title">هیئت قرانی انصار المهدی</h1>
+        <p style="margin-top:10px;">majdi789023.github.io</p>
     </div>
 
-    <!-- بخش عنوان اصلی -->
     <div class="section">
         <h2>(متن عنوان اصلی اینجا قرار میگیرد)</h2>
         <p class="placeholder">(متن توضیحات اینجا وارد شود)</p>
     </div>
 
-    <!-- بخش اطلاعات حرم -->
     <div class="section">
         <h3>(متن مربوط به حرم)</h3>
         <p class="placeholder">(توضیحات تکمیلی)</p>
     </div>
 
-    <!-- بخش مجموعه‌ها -->
     <div class="section">
         <h2>(عنوان مجموعه‌ها)</h2>
         <ul>
@@ -64,12 +73,10 @@
         </ul>
     </div>
 
-    <!-- بخش مراسم -->
     <div class="section">
         <h3>(عنوان مراسم)</h3>
         <p class="placeholder">(جزئیات زمان و مکان)</p>
         <p class="placeholder">(توضیحات تکمیلی)</p>
     </div>
 </body>
-</html>
-```
+</html
