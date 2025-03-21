@@ -5,4 +5,11 @@
     overflow: hidden; /* رفع خطای نقطه اضافی */
     border-radius: 10px; 
 } 
-
+body {
+    font-family: 
+        "B Titr", /* برای عناوین */
+        "B Nazanin", /* برای متن‌های عمومی */
+        Tahoma, 
+        Arial, 
+        sans-serif;
+}
