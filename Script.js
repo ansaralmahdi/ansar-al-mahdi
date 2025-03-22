@@ -45,3 +45,7 @@ function toggleMenu() {
     var menu = document.getElementById("menu");
     menu.classList.toggle("show");
 }
+document.querySelector('.ellipsis').addEventListener('click', function() {
+       document.querySelector('.hidden-titles').style.display = 'block';
+       this.style.display = 'none'; // مخفی کردن سه نقطه پس از کلیک
+   });
