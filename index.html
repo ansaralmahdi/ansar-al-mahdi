@@ -273,17 +273,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    let menuToggle = document.getElementById("menu-toggle");
-    let menu = document.getElementById("menu");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
 
     menuToggle.addEventListener("click", function () {
         menu.classList.toggle("show");
-    });
-
-    document.addEventListener("click", function (event) {
-        if (!menu.contains(event.target) && event.target !== menuToggle) {
-            menu.classList.remove("show");
-        }
     });
 });
 </script>
