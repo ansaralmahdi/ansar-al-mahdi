@@ -47,5 +47,19 @@ body {
     }
     .slide img {
         height: 180px;
-    }
+    }/* استایل‌های مجموعه‌ها */
+.content ul {
+    list-style-type: none; /* حذف نقطه‌های لیست */
+    padding: 0;
+    font-size: 1.2em; /* افزایش اندازه فونت */
+    margin: 15px 0;
+}
+
+.content ul li {
+    padding: 10px;
+    background-color: #f8f9fa; /* پس‌زمینه روشن برای آیتم‌ها */
+    border-radius: 8px;
+    margin: 8px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* سایه ملایم */
+}
 }
