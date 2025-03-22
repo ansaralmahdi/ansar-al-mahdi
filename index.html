@@ -61,69 +61,54 @@
 <html dir="rtl" lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>اسلایدر افقی</title>
+    <title>اسلایدر افقی با Lightbox</title>
+    <!-- لینک CSS Lightbox از CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <style>
+        /* استایل‌های عمومی */
+        body {
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
         /* استایل‌های اسلایدر */
         .slider-container {
             width: 100%;
-            overflow-x: auto;
-            padding: 15px 0;
+            overflow-x: auto; /* فعال‌سازی اسکرول افقی */
+            padding: 20px 0;
         }
         .slider {
             display: flex;
-            gap: 20px;
+            gap: 20px; /* فاصله بین اسلایدها */
             padding: 0 20px;
         }
         .slide {
-            flex: 0 0 300px;
+            flex: 0 0 300px; /* عرض ثابت برای هر اسلاید */
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .slide:hover {
+            transform: translateY(-5px); /* افکت hover */
         }
         .slide img {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            object-fit: cover; /* جلوگیری از کش آمدن تصویر */
             border-radius: 12px;
         }
+
         /* تنظیمات ریسپانسیو برای موبایل */
         @media (max-width: 768px) {
             .slide {
-                flex: 0 0 250px;
+                flex: 0 0 250px; /* عرض کوچکتر در موبایل */
             }
             .slide img {
                 height: 180px;
             }
-    <!DOCTYPE html>
-<html dir="rtl" lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>اسلایدر با Lightbox</title>
-    <!-- لینک CSS Lightbox از CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <style>
-        /* استایل‌های اسلایدر */
-        .slider-container {
-            width: 100%;
-            overflow-x: auto;
-            padding: 15px 0;
-        }
-        .slider {
-            display: flex;
-            gap: 20px;
-            padding: 0 20px;
-        }
-        .slide {
-            flex: 0 0 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .slide img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
         }
     </style>
 </head>
@@ -133,14 +118,14 @@
         <div class="slider">
             <!-- اسلاید ۱ -->
             <div class="slide">
-                <a href="images/haram-1.webp" data-lightbox="gallery" data-title="حرم امیرالمؤمنین">
-                    <img src="images/haram-1.webp" alt="حرم امیرالمؤمنین">
+                <a href="IMG_20241219_224518_210.webp" data-lightbox="gallery" data-title="حرم امیرالمؤمنین">
+                    <img src="IMG_20241219_224518_210.webp" alt="حرم امیرالمؤمنین">
                 </a>
             </div>
             <!-- اسلاید ۲ -->
             <div class="slide">
-                <a href="images/haram-2.webp" data-lightbox="gallery" data-title="نمای داخلی">
-                    <img src="images/haram-2.webp" alt="نمای داخلی">
+                <a href="IMG_20241219_224506_1000.webp" data-lightbox="gallery" data-title="نمای داخلی">
+                    <img src="IMG_20241219_224506_1000.webp" alt="نمای داخلی">
                 </a>
             </div>
             <!-- اسلاید ۳ -->
