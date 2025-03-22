@@ -57,20 +57,71 @@
     <div class="section">
         <h2>(تاریخچه هیئت قرانی انصار المهدی)</h2>
         <p class="placeholder">(هیئت قرانی انصار المهدی در سال ۱۳۹۸ تاسیس شد ، از زمان شروع مراسم ها هر هفته سه شنبه به طور خانگی برگزار می شد تا به امروز که مراسم به طور وسیع تر و گسترده تری در کنار مزار رو شهید گمنام برگزار می گردد.هئیت قرانی انصار المهدی با برگزاری مراسم های مختلف مذهبی در اعیاد و شهادت ها هر سه شنبه مراسم هفتگی دارد و پذیرایی به همراه ان به عمل می یابد، امیدواریم که با کمک خداوند و دعای مردم این پرچم را به دست صاحبش امام زمان عجلل الله برسانیم.)</p>
-    </div>
+    <!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>اسلایدر افقی</title>
+    <style>
+        /* استایل‌های اسلایدر */
+        .slider-container {
+            width: 100%;
+            overflow-x: auto; /* فعال‌سازی اسکرول افقی */
+            -webkit-overflow-scrolling: touch; /* اسکرول نرم در موبایل */
+            padding: 15px 0;
+        }
+
+        .slider {
+            display: flex;
+            gap: 20px; /* فاصله بین تصاویر */
+            padding: 0 20px;
+        }
+
+        .slide {
+            flex: 0 0 300px; /* عرض ثابت برای هر اسلاید */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* جلوگیری از کش آمدن تصویر */
+            border-radius: 12px;
+        }
+
+        /* تنظیمات ریسپانسیو */
+        @media (max-width: 768px) {
+            .slide {
+                flex: 0 0 250px; /* عرض کوچکتر در موبایل */
+            }
+            .slide img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- اسلایدر افقی -->
     <div class="slider-container">
-    <div class="slider">
-        <div class="slide">
-            <img src="IMG_20241219_224506_1000.webp" alt="حرم ۱" class="slide-img">
-        </div>
-        <div class="slide">
-            <img src="IMG_20241219_224518_210.webp" alt="حرم ۲" class="slide-img">
-        </div>
-        <div class="slide">
-            <img src="IMG_20241219_224450_195.webp" alt="حرم ۳" class="slide-img">
+        <div class="slider">
+            <!-- اسلاید ۱ -->
+            <div class="slide">
+                <img src="IMG_20241219_224506_1000.webp" alt="(متن)">
+            </div>
+            <!-- اسلاید ۲ -->
+            <div class="slide">
+                <img src="IMG_20241219_224518_210.webp" alt="(متن)">
+            </div>
+            <!-- اسلاید ۳ -->
+            <div class="slide">
+                <img src="IMG_20241219_224450_195.webp" alt="(متن)">
+            </div>
         </div>
     </div>
-    </div>      
+</body>
+</html>    
     
 
     <div class="section">
