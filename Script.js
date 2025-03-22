@@ -23,7 +23,8 @@ document.querySelector('.ellipsis').addEventListener('click', function() {
        document.querySelector('.hidden-titles').style.display = 'block';
        this.style.display = 'none'; // مخفی کردن سه نقطه پس از کلیک
    });
-document.addEventListener("DOMContentLoaded", function() {
+document
+{
     alert("به سایت من خوش آمدید!");
 });
 <script>
