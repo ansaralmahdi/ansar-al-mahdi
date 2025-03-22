@@ -279,7 +279,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("menu");
 
     menuToggle.addEventListener("click", function () {
-        menu.classList.toggle("show");
+        menu.classList.toggle("show"); // اضافه یا حذف کلاس برای نمایش و مخفی کردن
+    });
+
+    // بستن منو با کلیک بیرون از آن
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove("show");
+        }
     });
 });
 </script>
