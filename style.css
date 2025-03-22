@@ -1,6 +1,14 @@
 .hidden-titles {
-         display: none; /* مخفی کردن عناصر */
-     }
+    display: none;
+}
+
+.ellipsis {
+    cursor: pointer;
+}
+
+.ellipsis:focus + .hidden-titles {
+    display: block;
+}
 
      .ellipsis {
          cursor: pointer; /* تغییر نشانگر ماوس به حالت کلیک */
