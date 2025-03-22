@@ -20,3 +20,19 @@ lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true
 });
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var query = document.getElementById('searchQuery').value.toLowerCase();
+    var results = document.getElementById('searchResults');
+    results.innerHTML = '';
+
+    // مثال: جستجو در عناوین مقالات
+    var articles = document.querySelectorAll('.article-list article h3');
+    articles.forEach(function(article) {
+        if (article.textContent.toLowerCase().includes(query)) {
+            var resultItem = document.createElement('div');
+            resultItem.textContent = article.textContent;
+            results.appendChild(resultItem);
+        }
+    });
+});
