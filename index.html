@@ -1,51 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head.menu-container {
-    text-align: center;
-    margin: 10px;
-}
-
-#menu-toggle {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#menu {
-    list-style: none;
-    padding: 0;
-    display: none; /* ابتدا مخفی */
-    background-color: #eee;
-    border-radius: 5px;
-    text-align: center;
-    position: absolute;
-    right: 10px;  /* موقعیت مناسب برای راست‌چین شدن */
-    top: 50px;  /* کمی پایین‌تر از دکمه منو */
-    width: 200px;
-}
-
-#menu li {
-    padding: 10px;
-}
-
-#menu a {
-    text-decoration: none;
-    color: black;
-    display: block;
-}
-
-#menu a:hover {
-    background: #ddd;
-}
-
-.show {
-    display: block !important;
-}>
+<head>
     <body>
         <!-- دکمه منوی همبرگری -->
 <button id="menu-toggle">☰ منو</button>
@@ -69,7 +25,51 @@
     <!-- لینک CSS Lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-    <style>
+    <style/* دکمه منو */
+#menu-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    display: block;
+}
+
+/* منو */
+#menu {
+    list-style: none;
+    padding: 0;
+    display: none; /* ابتدا مخفی است */
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 200px;
+}
+
+#menu li {
+    padding: 10px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+#menu a:hover {
+    background: #ddd;
+}
+
+/* وقتی کلاس "show" اضافه شود، منو نشان داده می‌شود */
+.show {
+    display: block !important;
+}>
         /* تنظیمات کلی */
         * {
             margin: 0;
