@@ -62,43 +62,31 @@
 <head>
     <meta charset="UTF-8">
     <title>اسلایدر افقی</title>
+    <!-- لینک CSS Lightbox از CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <style>
         /* استایل‌های اسلایدر */
         .slider-container {
             width: 100%;
             overflow-x: auto; /* فعال‌سازی اسکرول افقی */
-            -webkit-overflow-scrolling: touch; /* اسکرول نرم در موبایل */
             padding: 15px 0;
         }
-
         .slider {
             display: flex;
             gap: 20px; /* فاصله بین تصاویر */
             padding: 0 20px;
         }
-
         .slide {
             flex: 0 0 300px; /* عرض ثابت برای هر اسلاید */
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
         .slide img {
             width: 100%;
             height: 200px;
             object-fit: cover; /* جلوگیری از کش آمدن تصویر */
             border-radius: 12px;
-        }
-
-        /* تنظیمات ریسپانسیو */
-        @media (max-width: 768px) {
-            .slide {
-                flex: 0 0 250px; /* عرض کوچکتر در موبایل */
-            }
-            .slide img {
-                height: 180px;
-            }
         }
     </style>
 </head>
@@ -108,22 +96,37 @@
         <div class="slider">
             <!-- اسلاید ۱ -->
             <div class="slide">
-                <img src="IMG_20241219_224506_1000.webp" alt="(متن)">
+                <a href="images/(متن).webp" data-lightbox="gallery" data-title="(متن)">
+                    <img src="images/(متن).webp" alt="(متن)">
+                </a>
             </div>
             <!-- اسلاید ۲ -->
             <div class="slide">
-                <img src="IMG_20241219_224518_210.webp" alt="(متن)">
+                <a href="images/(متن).webp" data-lightbox="gallery" data-title="(متن)">
+                    <img src="images/(متن).webp" alt="(متن)">
+                </a>
             </div>
             <!-- اسلاید ۳ -->
             <div class="slide">
-                <img src="IMG_20241219_224450_195.webp" alt="(متن)">
+                <a href="images/(متن).webp" data-lightbox="gallery" data-title="(متن)">
+                    <img src="images/(متن).webp" alt="(متن)">
+                </a>
             </div>
         </div>
     </div>
-</body>
-</html>    
-   <head>
 
+    <!-- اسکریپت Lightbox از CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 250px; /* عرض کوچکتر در موبایل */
+    }
+    .slide-img {
+        height: 180px;
+    }
+}
     <div class="section">
         <h2>(عنوان مجموعه‌ها)</h2>
         <ul>
