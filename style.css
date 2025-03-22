@@ -49,3 +49,7 @@ body {
         height: 180px;
     }
 }
+<head>
+    <!-- لینک CSS Lightbox از CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
