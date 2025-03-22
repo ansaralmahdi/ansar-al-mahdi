@@ -1,29 +1,9 @@
 <script>
-    function showContent(contentId) {
-        // ۱. همه بخش‌ها را مخفی کن
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // ۲. بخش موردنظر را نمایش بده
-        const activeSection = document.getElementById(contentId);
-        if (activeSection) {
-            activeSection.classList.add('active');
-        }
-
-        // ۳. منو را بعد از کلیک ببند (اختیاری)
-        document.querySelector('.menu').classList.remove('active');
-    }
-
-    // نمایش صفحه اصلی به صورت پیشفرض
-    window.onload = () => showContent('home');
-</script>
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("show");
 }
-document.querySelector('.ellipsis').addEventListener('click', function() {
-       document.querySelector('.hidden-titles').style.display = 'block';
-       this.style.display = 'none'; // مخفی کردن سه نقطه پس از کلیک
-   });
-document
+</script>
 {
     alert("به سایت من خوش آمدید!");
 });
