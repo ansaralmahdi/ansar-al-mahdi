@@ -26,19 +26,7 @@
             padding-top: 20px;
         }
 
-        /* هدر */
-        .header {
-            text-align: center;
-            background-color: #0066cc;
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-
-        /* محتوای متنی */
+        /* استایل بخش‌ها */
         .content {
             text-align: center;
             color: #2c3e50;
@@ -50,7 +38,7 @@
             margin: 20px 0;
         }
 
-        /* تصویر بین بخش‌های مختلف */
+        /* تصاویر در بخش‌های مختلف */
         .image-container {
             text-align: center;
             margin: 20px 0;
@@ -61,96 +49,52 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
-        /* اسلایدر */
-        .slider-container {
-            width: 100%;
-            max-width: 800px;
-            overflow-x: auto;
-            padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        .slider {
-            display: flex;
-            gap: 20px;
-            padding: 0 20px;
-        }
-        .slide {
-            flex: 0 0 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .slide:hover {
-            transform: translateY(-5px);
-        }
-        .slide img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
     </style>
 </head>
 <body>
 
     <!-- هدر سایت -->
-    <div class="header">
+    <div class="content">
         <h1>هیئت قرائی انصار المهدی</h1>
         <p>majdi789023.github.io</p>
     </div>
 
-    <!-- تصویر و متن تاریخچه هیئت -->
+    <!-- درباره ما -->
     <div class="content">
-        <h2>تاریخچه هیئت قرائی انصار المهدی</h2>
-        <p>
-            هیئت قرائی انصار المهدی در سال ۱۳۹۸ تأسیس شد و از آن زمان تاکنون، با تلاش‌های مخلصانه خادمان، 
-            محافل مذهبی متعددی را برگزار کرده است. این هیئت با محوریت نشر معارف اهل‌بیت (ع) و انس با قرآن کریم، 
-            محفلی برای عاشقان امام زمان (عج) فراهم آورده است.
-        </p>
+        <h2>درباره ما</h2>
+        <p>هیئت قرائی انصار المهدی محفلی است که با محوریت قرآن و اهل‌بیت (ع) فعالیت می‌کند و جلسات مذهبی متنوعی برگزار می‌نماید.</p>
+    </div>
+
+    <!-- اعضا و مسئولین -->
+    <div class="content">
+        <h2>اعضا و مسئولین</h2>
+        <p>مسئولین و خادمین هیئت، با عشق و ارادت به اهل‌بیت (ع)، وظایف مختلفی را در برگزاری مراسم‌ها بر عهده دارند.</p>
     </div>
 
     <div class="image-container">
-        <img src="tarikhcheh.jpg" alt="تاریخچه هیئت">
+        <img src="members.jpg" alt="اعضا و مسئولین">
     </div>
 
-    <!-- اسلایدر -->
-    <div class="slider-container">
+    <!-- گالری تصاویر -->
+    <div class="content">
+        <h2>گالری تصاویر</h2>
         <div class="slider">
             <div class="slide">
-                <a href="IMG_1.webp" data-lightbox="gallery" data-title="حرم امیرالمؤمنین">
-                    <img src="IMG_1.webp" alt="حرم امیرالمؤمنین">
+                <a href="gallery1.jpg" data-lightbox="gallery">
+                    <img src="gallery1.jpg" alt="تصویر ۱">
                 </a>
             </div>
             <div class="slide">
-                <a href="IMG_2.webp" data-lightbox="gallery" data-title="نمای داخلی">
-                    <img src="IMG_2.webp" alt="نمای داخلی">
+                <a href="gallery2.jpg" data-lightbox="gallery">
+                    <img src="gallery2.jpg" alt="تصویر ۲">
                 </a>
             </div>
             <div class="slide">
-                <a href="IMG_3.webp" data-lightbox="gallery" data-title="مراسم ویژه">
-                    <img src="IMG_3.webp" alt="مراسم ویژه">
+                <a href="gallery3.jpg" data-lightbox="gallery">
+                    <img src="gallery3.jpg" alt="تصویر ۳">
                 </a>
             </div>
         </div>
-    </div>
-
-    <!-- تصویر و متن مراسم‌های هفتگی -->
-    <div class="content">
-        <h2>برنامه‌های هفتگی هیئت</h2>
-        <p>
-            هیئت قرائی انصار المهدی در روزهای پنجشنبه هر هفته محافل قرآنی و جلسات دعا برگزار می‌کند.  
-            این محافل شامل قرائت قرآن، سخنرانی مذهبی، و ذکر اهل‌بیت (ع) می‌باشد. همچنین، در ایام خاص 
-            مانند شب‌های قدر، ایام فاطمیه و محرم، برنامه‌های ویژه‌ای تدارک دیده می‌شود.
-        </p>
-    </div>
-
-    <div class="image-container">
-        <img src="marasem_haftgi.jpg" alt="مراسم‌های هفتگی">
     </div>
 
     <!-- جستجو -->
@@ -168,6 +112,7 @@
 
 </body>
 </html>
+
 
 
    
