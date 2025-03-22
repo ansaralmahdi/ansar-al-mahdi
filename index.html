@@ -1,51 +1,109 @@
 <!DOCTYPE html>
-<html lang="fa">
-<head><link rel="stylesheet" href="styles.css">
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منوی همبرگری</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هیئت قرائی انصار المهدی</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: right;
+            background: #f5f5f5;
         }
         .header {
-            background-color: #f4f4f4;
-            padding: 10px;
             text-align: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 24px;
         }
         .menu {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            color: white;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .menu.active {
+            left: 0;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 20px;
+        }
+        .menu li {
+            margin: 15px 0;
             padding: 10px;
+            border-bottom: 1px solid #eee;
         }
         .menu a {
-            color: white;
             text-decoration: none;
+            color: #333;
+            font-size: 16px;
         }
         .content {
             padding: 20px;
+            margin-top: 80px;
         }
-        .toggle-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .h
+    </style>
+</head>
+<body>
+    <!-- دکمه همبرگر منو -->
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+    
+    <!-- منوی عمودی -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">صفحه آغاز</a></li>
+            <li><a href="#">نوا و نما</a></li>
+            <li><a href="#">بایگانی</a></li>
+            <li><a href="#">جستجو</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">بخش زنده</a></li>
+        </ul>
+    </nav>
+
+    <!-- هدر سایت -->
+    <div class="header">
+        <h1>هیئت قرائی انصار المهدی</h1>
+        <p>majdi789023.github.io</p>
+    </div>
+
+    <!-- محتوای اصلی -->
+    <div class="content">
+        <div class="hero-section">
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
 
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
