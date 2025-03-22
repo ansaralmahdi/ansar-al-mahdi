@@ -1,4 +1,11 @@
-.ellipsis::after {
+.hidden-titles {
+         display: none; /* مخفی کردن عناصر */
+     }
+
+     .ellipsis {
+         cursor: pointer; /* تغییر نشانگر ماوس به حالت کلیک */
+         text-align: center; /* قرار دادن سه نقطه در وسط */
+     }.ellipsis::after {
        content: '...';
        position: absolute;
        bottom: 0;
