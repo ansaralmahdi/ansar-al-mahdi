@@ -41,3 +41,7 @@ document.querySelector('#header .search button').addEventListener('click', funct
     var query = document.querySelector('#header .search input').value;
     alert('جستجو برای: ' + query);
 });
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+}
