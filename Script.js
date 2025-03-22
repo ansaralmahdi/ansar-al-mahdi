@@ -15,3 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 </script>
+// فعال‌سازی Lightbox
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+});
