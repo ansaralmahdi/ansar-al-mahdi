@@ -179,3 +179,10 @@ body {
 .hidden-titles {
        display: none;
 }
+.ellipsis::after {
+       content: '...';
+       position: absolute;
+       bottom: 0;
+       right: 0;
+       background-color: white; /* برای پوشاندن محتوای زیرین */
+}
