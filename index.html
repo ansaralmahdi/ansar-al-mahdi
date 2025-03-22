@@ -1,27 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هیئت قرائی انصار المهدی</title>
+
+    <!-- لینک CSS Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
     <style>
+        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background: #2c3e50
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            background-color: #87CEEB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 20px;
         }
+
+        /* هدر */
         .header {
             text-align: center;
-            padding: 30px;
-            background: #fff;
-            box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 800px;
             margin-bottom: 20px;
         }
+
+        /* محتوای متنی */
+        .content {
+            text-align: center;
+            color: #2c3e50;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        /* استایل منو همبرگری */
         .hamburger-menu {
             position: fixed;
             top: 20px;
@@ -29,6 +58,9 @@
             cursor: pointer;
             z-index: 1000;
             font-size: 24px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         .menu {
             position: fixed;
@@ -58,110 +90,14 @@
             color: #333;
             font-size: 16px;
         }
-        .content {
-            padding: 20px;
-            margin-top: 80px;
-        }
-        .hero-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: #fff;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
-</head>
-<body>
-    <!-- دکمه همبرگر منو -->
-    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
-    
-    <!-- منوی عمودی -->
-    <nav class="menu">
-        <ul>
-            <li><a href="#">صفحه آغاز</a></li>
-            <li><a href="#">نوا و نما</a></li>
-            <li><a href="#">بایگانی</a></li>
-            <li><a href="#">جستجو</a></li>
-            <li><a href="#">تماس با ما</a></li>
-            <li><a href="#">بخش زنده</a></li>
-        </ul>
-    </nav>
 
-    <!-- هدر سایت -->
-    <div class="header">
-        <h1>هیئت قرائی انصار المهدی</h1>
-        <p>majdi789023.github.io</p>
-    </div>
-    <div class="content">
-    <!-- بخش اصلی محتوا -->
-    <div class="content-section" id="home">
-        <div class="hero-section">
-            
-    <!-- محتوای اصلی -->
-    <div class="content">
-        <div class="hero-section">
-    <script>
-        function toggleMenu() {
-            document.querySelector('.menu').classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html dir="rtl" lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>هیئت قرائی انصار المهدی</title>
-    <!-- لینک CSS Lightbox از CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <style>
-        /* استایل‌های عمومی */
-        body {
-            font-family: 'B Nazanin', Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #87CEEB; /* پس‌زمینه آبی آسمانی */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-
-        /* استایل‌های هدر */
-        .header {
-            text-align: center;
-            background-color: #0066cc; /* پس‌زمینه آبی پررنگ */
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-
-        /* استایل‌های متن */
-        .content {
-            text-align: center;
-            color: #2c3e50;
-            max-width: 800px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* پس‌زمینه سفید با شفافیت */
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-
-        /* استایل‌های اسلایدر */
+        /* اسلایدر */
         .slider-container {
             width: 100%;
             max-width: 800px;
             overflow-x: auto;
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9); /* پس‌زمینه سفید با شفافیت */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin: 20px 0;
@@ -188,7 +124,7 @@
             border-radius: 12px;
         }
 
-        /* تنظیمات ریسپانسیو برای موبایل */
+        /* تنظیمات ریسپانسیو */
         @media (max-width: 768px) {
             .slide {
                 flex: 0 0 250px;
@@ -200,93 +136,75 @@
     </style>
 </head>
 <body>
-    <!-- هدر -->
+
+    <!-- دکمه منو همبرگری -->
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+    
+    <!-- منوی کناری -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">صفحه آغاز</a></li>
+            <li><a href="#">نوا و نما</a></li>
+            <li><a href="#">بایگانی</a></li>
+            <li><a href="#">جستجو</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">بخش زنده</a></li>
+        </ul>
+    </nav>
+
+    <!-- هدر سایت -->
     <div class="header">
         <h1>هیئت قرائی انصار المهدی</h1>
         <p>majdi789023.github.io</p>
     </div>
 
-    <!-- محتوای متن (تاریخچه) -->
+    <!-- محتوای اصلی -->
     <div class="content">
         <h2>اسلام علیک یا اباصالح المهدی</h2>
         <h3>تاریخچه هیئت قرائی انصار المهدی</h3>
-        <p>هیئت قرائی انصار المهدی در سال ۱۳۹۸ تاسیس شد، از زمان شروع مراسم ها هر هفته سه شنبه به طور خانگی برگزار می شد تا به امروز که مراسم به طور وسیع تر و گسترده تری در کنار مزار رو شهید گمثام برگزار می گردد. هیئت قرائی انصار المهدی با برگزاری مراسم های مختلف مذهبی در اعیاد و شهادت ها هر سه شنبه مراسم هفتگی دارد و پذیرایی به همراه آن به عمل می یابد. امیدواریم که با کمک خداوند و دعای مردم این پرچم را به دست صاحبش امام زمان عجال الله برسانیم.</p>
+        <p>هیئت قرائی انصار المهدی در سال ۱۳۹۸ تاسیس شد و از آن زمان تاکنون مراسم‌های مذهبی برگزار می‌کند.</p>
     </div>
 
-    <!-- اسلایدر افقی -->
+    <!-- اسلایدر -->
     <div class="slider-container">
         <div class="slider">
-            <!-- اسلاید ۱ -->
             <div class="slide">
-                <a href="IMG_20241219_224506_1000.webp" data-lightbox="gallery" data-title="حرم امیرالمؤمنین">
-                    <img src="IMG_20241219_224506_1000.webp" alt="حرم امیرالمؤمنین">
+                <a href="IMG_1.webp" data-lightbox="gallery" data-title="حرم امیرالمؤمنین">
+                    <img src="IMG_1.webp" alt="حرم امیرالمؤمنین">
                 </a>
             </div>
-            <!-- اسلاید ۲ -->
             <div class="slide">
-                <a href="IMG_20241219_224518_210.webp" data-lightbox="gallery" data-title="نمای داخلی">
-                    <img src="IMG_20241219_224518_210.webp" alt="نمای داخلی">
+                <a href="IMG_2.webp" data-lightbox="gallery" data-title="نمای داخلی">
+                    <img src="IMG_2.webp" alt="نمای داخلی">
                 </a>
             </div>
-            <!-- اسلاید ۳ -->
             <div class="slide">
-                <a href="IMG_20241219_224450_195.webp" data-lightbox="gallery" data-title="مراسم ویژه">
-                    <img src="IMG_20241219_224450_195.webp" alt="مراسم ویژه">
+                <a href="IMG_3.webp" data-lightbox="gallery" data-title="مراسم ویژه">
+                    <img src="IMG_3.webp" alt="مراسم ویژه">
                 </a>
             </div>
         </div>
     </div>
 
-    <!(محتوای متن) -->
+    <!-- جستجو -->
     <div class="content">
-        <h3>مجموعه ها</h3>
-        <ul>
-            <li>فضای مجازی </li>
-            <li>نقشه مزار شهدای گمنام</li>
-            <li>اطلاعیه مراسم های مختلف</li>
-        </ul>
+        <h2>جستجو</h2>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" placeholder="جستجو...">
+            <button type="submit">بگرد</button>
+        </form>
+        <div id="searchResults"></div>
     </div>
 
-    <!-- محتوای متن (مراسم‌های هفتگی) -->
-    <div class="content">
-        <h3>مراسم‌های هفتگی هر سه شنبه</h3>
-        <p>هر سه شنبه ساعت ۱۹:۳۰ به وقت ایران در مزار شهدای گمنام کادر آباد به همراه تلاوت قرآن، سخنرانی، مداحی و پذیرایی در اختر مجلس.</p>
-        <p>از همه عزیزان دعوت می‌شود که سه شنبه‌ها ما را در این مراسم همراهی فرمایند. یا علی مدد.</p>
-    </div>
-
-    <!-- اسکریپت Lightbox از CDN -->
+    <!-- اسکریپت‌های مورد نیاز -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
-<section id="about">
-    <h2>درباره ما</h2>
-    <p>هیئت قرائی انصار المهدی در سال ۱۳۹۸ تاسیس شد و از آن زمان تاکنون به برگزاری مراسم‌های مذهبی و فرهنگی مشغول است.</p>
-
-    <!-- اعضا و مسئولین -->
-    <div class="members">
-        <h3>اعضا و مسئولین</h3>
-        <ul>
-            <li>حاج محمود کریمی - مسئول هیئت</li>
-            <li>سید محمد حسینی - مدیر برنامه‌ریزی</li>
-        </ul>
-    </div>
-
-    <!-- گالری تصاویر -->
-    <div class="gallery">
-        <h3>گالری تصاویر</h3>
-        <div class="images">
-            <img src="images/about-1.webp" alt="تصویر ۱">
-            <img src="images/about-2.webp" alt="تصویر ۲">
-        </div>
-    </div>
-</section>
-<section id="about">
- <section id="search">
-    <h2>جستجو</h2>
-    <form id="searchForm">
-        <input type="text" id="searchQuery" placeholder="جستجو...">
-        <button type="submit">بگرد</button>
-    </form>
-    <div id="searchResults"></div>
- </section>   
+   
 
