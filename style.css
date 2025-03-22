@@ -1,4 +1,15 @@
-  </div>.image-box {
+.hidden-titles {
+    display: none;
+}
+
+.ellipsis {
+    cursor: pointer;
+}
+
+.ellipsis:focus + .hidden-titles {
+    display: block;
+}
+</div>.image-box {
     position: relative; 
     overflow: hidden; /* رفع خطای نقطه اضافی */
     border-radius: 10px; 
