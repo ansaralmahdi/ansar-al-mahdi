@@ -25,7 +25,7 @@
     <!-- لینک CSS Lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-    <style/* دکمه منو */
+    <style//* تنظیمات دکمه منو */
 #menu-toggle {
     background-color: #333;
     color: white;
@@ -38,11 +38,11 @@
     display: block;
 }
 
-/* منو */
+/* مخفی کردن منو پیش‌فرض */
 #menu {
+    display: none;
     list-style: none;
     padding: 0;
-    display: none; /* ابتدا مخفی است */
     background-color: #eee;
     border-radius: 5px;
     text-align: right;
@@ -50,6 +50,13 @@
     right: 10px;
     top: 50px;
     width: 200px;
+    z-index: 1000; /* اطمینان از نمایش در بالای سایر المان‌ها */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* نمایش منو در هنگام کلیک */
+#menu.show {
+    display: block;
 }
 
 #menu li {
@@ -64,11 +71,6 @@
 
 #menu a:hover {
     background: #ddd;
-}
-
-/* وقتی کلاس "show" اضافه شود، منو نشان داده می‌شود */
-.show {
-    display: block !important;
 }>
         /* تنظیمات کلی */
         * {
