@@ -50,45 +50,16 @@
             margin: 20px 0;
         }
 
-        /* استایل منو همبرگری */
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            z-index: 1000;
-            font-size: 24px;
-            background: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+        /* تصویر بین بخش‌های مختلف */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
         }
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background: #fff;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            padding-top: 60px;
-        }
-        .menu.active {
-            left: 0;
-        }
-        .menu ul {
-            list-style: none;
-            padding: 20px;
-        }
-        .menu li {
-            margin: 15px 0;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* اسلایدر */
@@ -123,34 +94,9 @@
             object-fit: cover;
             border-radius: 12px;
         }
-
-        /* تنظیمات ریسپانسیو */
-        @media (max-width: 768px) {
-            .slide {
-                flex: 0 0 250px;
-            }
-            .slide img {
-                height: 180px;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- دکمه منو همبرگری -->
-    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
-    
-    <!-- منوی کناری -->
-    <nav class="menu">
-        <ul>
-            <li><a href="#">صفحه آغاز</a></li>
-            <li><a href="#">نوا و نما</a></li>
-            <li><a href="#">بایگانی</a></li>
-            <li><a href="#">جستجو</a></li>
-            <li><a href="#">تماس با ما</a></li>
-            <li><a href="#">بخش زنده</a></li>
-        </ul>
-    </nav>
 
     <!-- هدر سایت -->
     <div class="header">
@@ -158,11 +104,9 @@
         <p>majdi789023.github.io</p>
     </div>
 
-    <!-- محتوای اصلی -->
-    <div class="content">
-        <h2>اسلام علیک یا اباصالح المهدی</h2>
-        <h3>تاریخچه هیئت قرائی انصار المهدی</h3>
-        <p>هیئت قرائی انصار المهدی در سال ۱۳۹۸ تاسیس شد و از آن زمان تاکنون مراسم‌های مذهبی برگزار می‌کند.</p>
+    <!-- تصویر تاریخچه هیئت (بالای اسلایدر) -->
+    <div class="image-container">
+        <img src="tarikhcheh.jpg" alt="تاریخچه هیئت">
     </div>
 
     <!-- اسلایدر -->
@@ -186,6 +130,11 @@
         </div>
     </div>
 
+    <!-- تصویر مراسم‌های هفتگی (بین اسلایدر و جستجو) -->
+    <div class="image-container">
+        <img src="marasem_haftgi.jpg" alt="مراسم‌های هفتگی">
+    </div>
+
     <!-- جستجو -->
     <div class="content">
         <h2>جستجو</h2>
@@ -198,13 +147,10 @@
 
     <!-- اسکریپت‌های مورد نیاز -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script>
-        function toggleMenu() {
-            document.querySelector('.menu').classList.toggle('active');
-        }
-    </script>
 
 </body>
 </html>
+
+
    
 
