@@ -1,9 +1,3 @@
-<script>
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-}
-</script>
 {
     alert("به سایت من خوش آمدید!");
 });
