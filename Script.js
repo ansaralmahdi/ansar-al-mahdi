@@ -1,3 +1,8 @@
+}
+document.querySelector('.ellipsis').addEventListener('click', function() {
+       document.querySelector('.hidden-titles').style.display = 'block';
+       this.style.display = 'none'; // مخفی کردن سه نقطه پس از کلیک
+   });
 document.addEventListener("DOMContentLoaded", function() {
     alert("به سایت من خوش آمدید!");
 });
@@ -44,8 +49,3 @@ document.querySelector('#header .search button').addEventListener('click', funct
 function toggleMenu() {
     var menu = document.getElementById("menu");
     menu.classList.toggle("show");
-}
-document.querySelector('.ellipsis').addEventListener('click', function() {
-       document.querySelector('.hidden-titles').style.display = 'block';
-       this.style.display = 'none'; // مخفی کردن سه نقطه پس از کلیک
-   });
