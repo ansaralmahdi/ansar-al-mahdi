@@ -36,3 +36,8 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
         }
     });
 });
+// جستجو
+document.querySelector('#header .search button').addEventListener('click', function() {
+    var query = document.querySelector('#header .search input').value;
+    alert('جستجو برای: ' + query);
+});
