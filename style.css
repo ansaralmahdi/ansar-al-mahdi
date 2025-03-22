@@ -176,3 +176,6 @@ body {
 .show {
     display: block;
 }
+.hidden-titles {
+       display: none;
+}
