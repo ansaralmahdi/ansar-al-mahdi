@@ -1,13 +1,55 @@
-hamburger-menu {
+/* دکمه منوی همبرگری */
+.menu-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    right: 10px;
     z-index: 1000;
-    background: rgba(255,255,255,0.9);
+}
+
+/* منوی کشویی */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #0066cc;
+    color: white;
+    transition: 0.3s;
+    padding-top: 50px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
     padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}       
+    text-align: right;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.menu ul li a:hover {
+    background-color: #005bb5;
+}
+
+/* نمایش منو */
+.menu.show {
+    right: 0;
+}     
    </div>.image-box { 
     position: relative; 
     overflow: hidden; /* رفع خطای نقطه اضافی */
