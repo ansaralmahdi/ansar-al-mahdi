@@ -1,4 +1,4 @@
-.hamburger-menu {
+hamburger-menu {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -7,62 +7,7 @@
     padding: 10px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.menu {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(5px);
-}
-.slider-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-.slide {
-    scroll-snap-align: start;
-    flex: 0 0 85%;
-    margin: 0 2.5%;
-}
-@media (max-width: 768px) {
-    .header, .content {
-        width: 95%;
-        padding: 1rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    .slide {
-        flex: 0 0 95%;
-    }
-}
-.hidden-titles {
-    display: none;
-}
-
-.ellipsis {
-    cursor: pointer;
-}
-
-.ellipsis:focus + .hidden-titles {
-    display: block;
-}
-
-     .ellipsis {
-         cursor: pointer; /* تغییر نشانگر ماوس به حالت کلیک */
-         text-align: center; /* قرار دادن سه نقطه در وسط */
-     }.ellipsis::after {
-       content: '...';
-       position: absolute;
-       bottom: 0;
-       right: 0;
-       background-color: white; /* برای پوشاندن محتوای زیرین */
-}.hidden-titles {
-       display: none;
-}
-       
+}       
    </div>.image-box { 
     position: relative; 
     overflow: hidden; /* رفع خطای نقطه اضافی */
