@@ -13,39 +13,38 @@ body {
         Arial, 
         sans-serif;
 }
+/* استایل اصلی اسلایدر */
 .slider-container {
-    overflow-x: auto; /* امکان اسکرول افقی */
-    white-space: nowrap; /* جلوگیری از شکستن خط */
+    width: 100%;
+    overflow-x: auto; /* فعال‌سازی اسکرول افقی */
+    -webkit-overflow-scrolling: touch; /* اسکرول نرم در موبایل */
     padding: 15px 0;
-    scroll-behavior: smooth; /* اسکرول نرم */
+}
+
+.slider {
+    display: flex;
+    gap: 20px; /* فاصله بین اسلایدها */
+    padding: 0 20px;
 }
 
 .slide {
-    display: inline-block; /* نمایش افقی */
-    width: 300px;
-    margin-right: 20px;
-    vertical-align: top;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 0 0 300px; /* عرض ثابت برای اسلایدها */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .slide-img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    object-fit: cover; /* جلوگیری از کش آمدن تصویر */
+    border-radius: 12px;
 }
-
-.slide-video {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.slide-caption {
-    padding: 12px;
-    text-align: center;
-    font-family: 'B Nazanin';
-    color: #444;
-    white-space: normal; /* متن چند خطی */
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 250px; /* عرض کوچکتر در موبایل */
+    }
+    .slide-img {
+        height: 180px;
+    }
 }
