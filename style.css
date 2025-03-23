@@ -1,58 +1,50 @@
-/* دکمه منوی همبرگری */
-.menu-btn {
-    font-size: 18px;
+/* تنظیمات کلی */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* دکمه همبرگری */
+.hamburger {
+    font-size: 30px;
     cursor: pointer;
-    background-color: #0066cc;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+    padding: 15px;
 }
 
-/* استایل کلی منو */
-.menu {
-    position: fixed;
-    top: 0;
-    right: -250px; /* مخفی بودن منو در ابتدا */
-    width: 250px;
-    height: 100%;
-    background-color: #0066cc;
-    color: white;
-    transition: right 0.3s ease-in-out;
-    padding-top: 50px;
-}
-
-/* لیست آیتم‌های منو */
-.menu ul {
-    list-style: none;
+/* منوی ناوبری */
+.nav-menu {
+    display: none;
+    background-color: #333;
     padding: 0;
     margin: 0;
 }
 
-.menu ul li {
-    padding: 10px 20px;
-    text-align: right;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.menu ul li a {
+.nav-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.nav-menu a {
     color: white;
     text-decoration: none;
+    padding: 15px;
     display: block;
-    padding: 10px;
-    font-size: 16px;
 }
 
-.menu ul li a:hover {
-    background-color: #005bb5;
+.nav-menu a:hover {
+    background-color: #444;
 }
 
-/* کلاس نمایش منو */
-.menu.show {
-    right: 0; /* وقتی دکمه زده شود، منو به این مقدار تغییر می‌کند */
+/* نمایش منو در حالت فعال */
+.nav-menu.show {
+    display: block;
 }
 </div>.image-box { 
     position: relative; 
