@@ -164,6 +164,65 @@
 </body>
 </html>
 <!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <!-- استایل‌های منو (همانند کد قبلی) -->
+    <style>
+        .content-page {
+            display: none;
+            padding: 20px;
+            margin-top: 60px;
+        }
+        .content-page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- منوی همبرگری (همانند کد قبلی) -->
+
+    <!-- بخش‌های محتوا -->
+    <div id="home-content" class="content-page active">
+        <h2>خانه</h2>
+        <p>به صفحه اصلی خوش آمدید.</p>
+    </div>
+
+    <div id="random-content" class="content-page">
+        <h2>تصادفی</h2>
+        <p>مطالب تصادفی ویکی پدیا...</p>
+    </div>
+
+    <div id="about-content" class="content-page">
+        <h2>تکنیم نامه‌ها</h2>
+        <p>محتوا مربوط به تکنیم نامه‌ها...</p>
+    </div>
+
+    <script>
+        // توابع منو (همانند کد قبلی) + تابع جدید
+        function showContent(contentId) {
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            const targetContent = document.getElementById(contentId);
+            if (targetContent) targetContent.classList.add('active');
+            document.body.classList.remove('menu-active');
+        }
+
+        // افزودن رویداد کلیک به آیتم‌ها
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.menu-items li a').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const contentId = item.getAttribute('data-content');
+                    if (contentId) showContent(contentId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <body>
