@@ -1,7 +1,4 @@
-function toggleMenu() {
-    var menu = document.getElementById("navMenu");
-    menu.classList.toggle("show");
-}
+
 {
     alert("به سایت من خوش آمدید!");
 });
