@@ -166,6 +166,64 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه اصلی</title>
+    <style>
+        /* استایل‌های منو (همانند کدهای قبلی) */
+    </style>
+</head>
+<body>
+    <!-- منوی همبرگری -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- آیتم‌های منو -->
+    <nav class="menu-container">
+        <ul class="menu-items">
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="random.html">تصادفی</a></li>
+            <li><a href="settings.html">تنظیمات</a></li>
+            <li>
+                <a href="documents.html">تکنیم نامه‌ها</a>
+                <ul class="sub-menu">
+                    <li><a href="soulsand-ha.html">صول سنده‌ها</a></li>
+                    <li><a href="leh-ha.html">له‌ها</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- محتوای صفحه اصلی -->
+    <div class="content">
+        <h1>خوش آمدید!</h1>
+        <p>این صفحه اصلی است.</p>
+    </div>
+
+    <script>
+        // توابع منو (همانند قبل)
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+
+        // بستن منو پس از کلیک روی لینک‌ها
+        document.querySelectorAll('.menu-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.body.classList.remove('menu-active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
     <!-- استایل‌های منو (همانند کد قبلی) -->
     <style>
         .content-page {
