@@ -3,20 +3,6 @@
 <html lang="fa" dir="rtl">
 <head>
     <body>
-        <!-- دکمه منوی همبرگری -->
-<button id="menu-toggle">☰ منو</button>
-
-<!-- منوی کشویی -->
-<nav class="menu" id="menu">
-    <ul>
-        <li><a href="#">صفحه اصلی</a></li>
-        <li><a href="#">تاریخچه هیئت</a></li>
-        <li><a href="#">برنامه‌های هفتگی</a></li>
-        <li><a href="#">اعضا و مسئولین</a></li>
-        <li><a href="#">درباره ما</a></li>
-        <li><a href="#">گالری</a></li>
-        <li><a href="#">جستجو</a></li>
-    </ul>
 </nav>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,53 +11,7 @@
     <!-- لینک CSS Lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
-    <style//* تنظیمات دکمه منو */
-#menu-toggle {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px;
-    display: block;
-}
-
-/* مخفی کردن منو پیش‌فرض */
-#menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    background-color: #eee;
-    border-radius: 5px;
-    text-align: right;
-    position: absolute;
-    right: 10px;
-    top: 50px;
-    width: 200px;
-    z-index: 1000; /* اطمینان از نمایش در بالای سایر المان‌ها */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* نمایش منو در هنگام کلیک */
-#menu.show {
-    display: block;
-}
-
-#menu li {
-    padding: 10px;
-}
-
-#menu a {
-    text-decoration: none;
-    color: black;
-    display: block;
-}
-
-#menu a:hover {
-    background: #ddd;
-}>
+    <style>
         /* تنظیمات کلی */
         * {
             margin: 0;
@@ -273,23 +213,6 @@
 
     <!-- اسکریپت‌های مورد نیاز -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    menuToggle.addEventListener("click", function () {
-        menu.classList.toggle("show"); // اضافه یا حذف کلاس برای نمایش و مخفی کردن
-    });
-
-    // بستن منو با کلیک بیرون از آن
-    document.addEventListener("click", function (event) {
-        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-            menu.classList.remove("show");
-        }
-    });
-});
-</script>
 </body>
 </html>
 
