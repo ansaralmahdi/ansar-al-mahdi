@@ -405,331 +405,173 @@
             این هیئت با برگزاری محافل قرآنی، مراسم مذهبی، و برنامه‌های فرهنگی، نقش مؤثری در گسترش معارف دینی ایفا می‌کند.
         </p>
     </div>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری ویدیویی اسکرول افقی</title>
+    <title>گالری تصویری</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* CSS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
+        /* تنظیمات کلی */
+        * {
             margin: 0;
-            padding: 20px;
-            color: #333;
-            overflow-x: hidden;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'B Nazanin', Tahoma, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 20px;
         }
 
-        .video-gallery-container {
-            max-width: 100%;
-            margin: 30px auto;
+        /* گالری */
+        .gallery-container {
             position: relative;
+            max-width: 90%;
+            overflow: hidden;
+            margin: 20px auto;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
-        .gallery-title {
-            text-align: center;
-            color: #222;
-            margin-bottom: 30px;
-            font-size: 2.2rem;
-        }
-
-        .horizontal-scroll-wrapper {
+        .gallery {
             display: flex;
             overflow-x: auto;
-            scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding: 20px 0;
-            gap: 20px;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 10px;
             scrollbar-width: none; /* برای فایرفاکس */
         }
-
-        .horizontal-scroll-wrapper::-webkit-scrollbar {
+        .gallery::-webkit-scrollbar {
             display: none; /* برای کروم و سافاری */
         }
-
-        .video-item {
-            flex: 0 0 auto;
-            width: 300px;
-            scroll-snap-align: start;
-            border-radius: 10px;
+        .gallery-item {
+            flex: 0 0 150px;
+            scroll-snap-align: center;
+            cursor: pointer;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            background: #fff;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        .video-item:hover {
-            transform: scale(1.03);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-top: 56.25%; /* نسبت 16:9 */
-        }
-
-        .gallery-video {
+        /* دکمه‌های جابجایی */
+        .gallery-controls {
+            display: flex;
+            justify-content: space-between;
             position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .gallery-controls button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        .gallery-controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* لایت‌باکس */
+        .lightbox {
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
         }
-
-        .video-controls {
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+        .lightbox-close {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            transition: opacity 0.3s;
-        }
-
-        .play-btn {
-            background: rgba(255, 255, 255, 0.9);
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: black;
             border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-left: 10px;
+            padding: 10px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .play-btn:hover {
-            background: #fff;
-            transform: scale(1.1);
-        }
-
-        .play-btn i {
-            color: #333;
-            font-size: 16px;
-        }
-
-        .video-info {
-            color: #fff;
-            flex: 1;
-        }
-
-        .video-info h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-        }
-
-        .video-info p {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* دکمه‌های ناوبری */
-        .scroll-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-
-        .nav-btn {
-            background: #333;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
             border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            font-size: 20px;
         }
-
-        .nav-btn:hover {
-            background: #555;
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .video-item {
-                width: 250px;
-            }
-            
-            .gallery-title {
-                font-size: 1.8rem;
-            }
-        }
-        html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #87CEEB; /* رنگ دلخو*/
-            }
     </style>
 </head>
 <body>
-    <div class="video-gallery-container">
-        <h1 class="gallery-title">گالری ویدیویی اسکرول افقی</h1>
-        
-        <div class="horizontal-scroll-wrapper" id="gallery-scroll">
-            <!-- آیتم ویدیو 1 -->
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <video class="gallery-video" poster="https://via.placeholder.com/300x169">
-                        <source src="InShot_20250325_002729348.webm" type="InShot_20250325_002729348.webm">
-                        مرورگر شما از ویدیو پشتیبانی نمی‌کند.
-                    </video>
-                    <div class="video-controls">
-                        <button class="play-btn"><i class="fas fa-play"></i></button>
-                        <div class="video-info">
-                            <h3>مراسم دهه سوم محرم سال ۱۴۰۳</h3>
-                            <p>کلیپ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- آیتم ویدیو 2 -->
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <video class="gallery-video" poster="https://via.placeholder.com/300x169">
-                        <source src="InShot_20250325_003122672.mp4" type="InShot_20250325_003122672.mp4">
-                        مرورگر شما از ویدیو پشتیبانی نمی‌کند.
-                    </video>
-                    <div class="video-controls">
-                        <button class="play-btn"><i class="fas fa-play"></i></button>
-                        <div class="video-info">
-                            <h3>جشن عید سعید غدیر</h3>
-                            <p>کلیپ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- آیتم‌های بیشتر... -->
+    <!-- گالری -->
+    <div class="gallery-container">
+        <div class="gallery-controls">
+            <button onclick="scrollGallery(-1)"><i class="fas fa-chevron-right"></i></button>
+            <button onclick="scrollGallery(1)"><i class="fas fa-chevron-left"></i></button>
         </div>
-
-        <!-- دکمه‌های ناوبری (اختیاری) -->
-        <div class="scroll-nav">
-            <button class="nav-btn" id="scroll-left"><i class="fas fa-chevron-right"></i></button>
-            <button class="nav-btn" id="scroll-right"><i class="fas fa-chevron-left"></i></button>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item" onclick="openLightbox('image1.jpg')"><img src="image1.jpg" alt="تصویر ۱"></div>
+            <div class="gallery-item" onclick="openLightbox('image2.jpg')"><img src="image2.jpg" alt="تصویر ۲"></div>
+            <div class="gallery-item" onclick="openLightbox('image3.jpg')"><img src="image3.jpg" alt="تصویر ۳"></div>
+            <div class="gallery-item" onclick="openLightbox('image4.jpg')"><img src="image4.jpg" alt="تصویر ۴"></div>
+            <div class="gallery-item" onclick="openLightbox('image5.jpg')"><img src="image5.jpg" alt="تصویر ۵"></div>
         </div>
     </div>
 
+    <!-- لایت‌باکس -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="تصویر بزرگ">
+    </div>
+
     <script>
-        // مدیریت اسکرول افقی
-        const galleryScroll = document.getElementById('gallery-scroll');
-        const scrollLeftBtn = document.getElementById('scroll-left');
-        const scrollRightBtn = document.getElementById('scroll-right');
+        let gallery = document.getElementById('gallery');
 
-        // دکمه‌های ناوبری
-        if(scrollLeftBtn && scrollRightBtn) {
-            scrollLeftBtn.addEventListener('click', () => {
-                galleryScroll.scrollBy({ left: -300, behavior: 'smooth' });
-            });
-
-            scrollRightBtn.addEventListener('click', () => {
-                galleryScroll.scrollBy({ left: 300, behavior: 'smooth' });
+        function scrollGallery(direction) {
+            let scrollAmount = 200; 
+            gallery.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
             });
         }
 
-        // قابلیت درگ با ماوس
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+        function openLightbox(imageSrc) {
+            let lightbox = document.getElementById('lightbox');
+            let lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'flex';
+        }
 
-        galleryScroll.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - galleryScroll.offsetLeft;
-            scrollLeft = galleryScroll.scrollLeft;
-            galleryScroll.style.cursor = 'grabbing';
-            galleryScroll.style.scrollBehavior = 'auto';
-        });
-
-        galleryScroll.addEventListener('mouseleave', () => {
-            isDown = false;
-            galleryScroll.style.cursor = 'grab';
-        });
-
-        galleryScroll.addEventListener('mouseup', () => {
-            isDown = false;
-            galleryScroll.style.cursor = 'grab';
-            galleryScroll.style.scrollBehavior = 'smooth';
-        });
-
-        galleryScroll.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - galleryScroll.offsetLeft;
-            const walk = (x - startX) * 2;
-            galleryScroll.scrollLeft = scrollLeft - walk;
-        });
-
-        // مدیریت پخش ویدیوها
-        document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('.gallery-video');
-            const playButtons = document.querySelectorAll('.play-btn');
-            
-            playButtons.forEach((button, index) => {
-                button.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const video = videos[index];
-                    
-                    if (video.paused) {
-                        // توقف تمام ویدیوهای دیگر
-                        videos.forEach(v => {
-                            if (v !== video) {
-                                v.pause();
-                                v.controls = false;
-                                const btn = v.nextElementSibling.querySelector('.play-btn');
-                                btn.innerHTML = '<i class="fas fa-play"></i>';
-                            }
-                        });
-                        
-                        video.play();
-                        video.controls = true;
-                        this.innerHTML = '<i class="fas fa-pause"></i>';
-                    } else {
-                        video.pause();
-                        video.controls = false;
-                        this.innerHTML = '<i class="fas fa-play"></i>';
-                    }
-                });
-            });
-            
-            videos.forEach(video => {
-                video.addEventListener('click', function() {
-                    const playBtn = this.nextElementSibling.querySelector('.play-btn');
-                    if (this.paused) {
-                        this.play();
-                        this.controls = true;
-                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    } else {
-                        this.pause();
-                        this.controls = false;
-                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                    }
-                });
-                
-                video.addEventListener('ended', function() {
-                    this.controls = false;
-                    const playBtn = this.nextElementSibling.querySelector('.play-btn');
-                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                });
-            });
-        });
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
     </script>
-</body>   
-</html>
 
+</body>
+</html>
 
     <!-- جستجو -->
     <div class="content">
