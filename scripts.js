@@ -13,7 +13,8 @@ fetch('menu.html')
                 document.body.classList.remove('menu-active');
             });
         });
-    });
+    })
+    .catch(error => console.error('خطا در لود منو:', error));
 
 // باز و بسته کردن منو
 function toggleMenu() {
@@ -62,7 +63,6 @@ document.getElementById('contactForm')?.addEventListener('submit', (e) => {
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
     alert(`پیام از ${name} (${email}): ${message}`);
-    // اینجا می‌تونی با fetch به سرور بفرستی
 });
 
 // جستجو
