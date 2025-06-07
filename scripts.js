@@ -3,7 +3,6 @@ fetch('menu.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('menu-placeholder').innerHTML = data;
-        // برجسته کردن آیتم فعلی منو
         document.querySelectorAll('.menu-items a').forEach(link => {
             if (link.href === window.location.href) {
                 link.style.color = '#0066cc';
@@ -56,13 +55,23 @@ function filterGallery(category) {
     });
 }
 
-// فرم تماس
+// فرم تماس (با EmailJS)
 document.getElementById('contactForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
-    alert(`پیام از ${name} (${email}): ${message}`);
+
+    // برای تست موقت با localStorage
+    let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+    messages.push({ name, email, message, date: new Date().toLocaleString('fa-IR') });
+    localStorage.setItem('messages', JSON.stringify(messages));
+    
+    alert('پیام شما ذخیره شد! (برای ارسال واقعی، EmailJS یا سرور را تنظیم کنید)');
+    document.getElementById('contactForm').reset();
+    
+    // نمایش پیام‌های ذخیره‌شده در کنسول (برای تست)
+    console.log('پیام‌های ذخیره‌شده:', messages);
 });
 
 // جستجو
