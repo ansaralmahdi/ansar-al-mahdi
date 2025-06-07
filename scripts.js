@@ -62,6 +62,28 @@ document.getElementById('contactForm')?.addEventListener('submit', (e) => {
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
 
+    // ذخیره در localStorage
+    let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+    messages.push({ name, email, message, date: new Date().toLocaleString('fa-IR') });
+    localStorage.setItem('messages', JSON.stringify(messages));
+
+    // ارسال به ایمیل با EmailJS
+    emailjs.send('service_yi7vnpp', 'template_bi1l8qq', {
+        from_name: name,
+        from_email: email,
+        message: message,
+        date: new Date().toLocaleString('fa-IR')
+    }).then(() => {
+        alert('پیام شما با موفقیت ارسال شد!');
+        document.getElementById('contactForm').reset();
+    }).catch((error) => {
+        alert('خطا در ارسال پیام. لطفاً دوباره امتحان کنید.');
+        console.error('خطای EmailJS:', error);
+    });
+
+    console.log('پیام‌های ذخیره‌شده:', messages);
+});
+
     // برای تست موقت با localStorage
     let messages = JSON.parse(localStorage.getItem('messages') || '[]');
     messages.push({ name, email, message, date: new Date().toLocaleString('fa-IR') });
