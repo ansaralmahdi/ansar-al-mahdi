@@ -1,0 +1,370 @@
+/* تنظیمات کلی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazir', sans-serif;
+}
+
+body {
+    background-color: #87CEEB !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* منوی همبرگری */
+.hamburger-menu {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 5px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    right: -300px; /* مخفی به‌صورت پیش‌فرض */
+    width: 300px;
+    height: 100%;
+    background: #f8f9fa;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    padding: 70px 20px 20px;
+    overflow-y: auto;
+}
+
+.menu-active .menu-container {
+    right: 0;
+}
+
+.menu-active .hamburger-icon span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-active .hamburger-icon span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.menu-items {
+    list-style: none;
+}
+
+.menu-items li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* خط جداکننده */
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.menu-items li a:hover {
+    color: #0066cc;
+}
+
+.sub-menu {
+    list-style: none;
+    padding-right: 25px;
+    padding-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.sub-menu.active {
+    max-height: 200px;
+    display: block;
+}
+
+.sub-menu li {
+    padding: 10px 0;
+    border-bottom: none;
+}
+
+/* هدر */
+.header {
+    text-align: center;
+    background-color: #4169E1;
+    color: #FFFFFF;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* محتوا */
+.content {
+    text-align: center;
+    color: #2c3e50;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+/* تصویر بین بخش‌ها */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* اسلایدر */
+.slider-container {
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.slide {
+    flex: 0 0 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+}
+
+.slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* گالری */
+.gallery-container {
+    position: relative;
+    max-width: 90%;
+    overflow: hidden;
+    margin: 20px auto;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px;
+    scrollbar-width: none;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    flex: 0 0 150px;
+    scroll-snap-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.gallery-controls button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.gallery-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-filter {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gallery-filter button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background: #0066cc;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gallery-filter button:hover {
+    background: #0055aa;
+}
+
+/* فرم تماس */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#contactForm input, #contactForm textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contactForm button {
+    padding: 10px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contactForm button:hover {
+    background: #0055aa;
+}
+
+/* تقویم */
+.events {
+    list-style: none;
+    padding: 10px;
+}
+
+.events li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* جستجو */
+#searchForm {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#searchForm input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchForm button {
+    padding: 10px 20px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchForm button:hover {
+    background: #0055aa;
+}
+
+/* ریسپانسیو */
+@media (max-width: 600px) {
+    .gallery-item {
+        flex: 0 0 120px;
+        height: 80px;
+    }
+    .slider-container {
+        padding: 10px;
+    }
+    .content {
+        padding: 10px;
+        margin: 10px;
+    }
+}
