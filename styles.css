@@ -74,17 +74,6 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.menu-active::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* کاهش شفافیت */
-    z-index: 999;
-}
-
 .menu-items {
     list-style: none;
 }
