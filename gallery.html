@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="گالری تصاویر هیئت قرآنی انصار المهدی">
+    <meta name="keywords" content="هیئت قرآنی, انصار المهدی, گالری تصاویر, کلارآباد">
+    <meta name="author" content="هیئت انصار المهدی">
+    <title>گالری تصویری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- منوی همبرگری -->
+    <div id="menu-placeholder"></div>
 
+    <!-- هدر -->
+    <div class="header">
+        <h1>گالری تصاویر هیئت قرآنی انصار المهدی</h1>
+    </div>
+
+    <!-- فیلتر گالری (ویژگی جدید) -->
+    <div class="gallery-container">
+        <div class="gallery-filter">
+            <button onclick="filterGallery('all')">همه</button>
+            <button onclick="filterGallery('moharram')">محرم</button>
+            <button onclick="filterGallery('eids')">اعیاد</button>
+        </div>
+        <div class="gallery-controls">
+            <button onclick="scrollGallery(-1)"><i class="fas fa-chevron-right"></i></button>
+            <button onclick="scrollGallery(1)"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item" data-category="moharram">
+                <a href="images/IMG_20241218_190909.jpg" data-lightbox="gallery" data-title="تصویر ۱">
+                    <img src="images/IMG_20241218_190909.jpg" alt="تصویر ۱">
+                </a>
+            </div>
+            <div class="gallery-item" data-category="moharram">
+                <a href="images/۲۰۲۳۰۵۳۰_۲۱۰۵۵۷.jpg" data-lightbox="gallery" data-title="تصویر ۲">
+                    <img src="images/۲۰۲۳۰۵۳۰_۲۱۰۵۵۷.jpg" alt="تصویر ۲">
+                </a>
+            </div>
+            <div class="gallery-item" data-category="eids">
+                <a href="images/۲۰۲۳۰۷۰۴_۲۱۲۱۲۹.jpg" data-lightbox="gallery" data-title="تصویر ۳">
+                    <img src="images/۲۰۲۳۰۷۰۴_۲۱۲۱۲۹.jpg" alt="تصویر ۳">
+                </a>
+            </div>
+            <div class="gallery-item" data-category="eids">
+                <a href="images/۲۰۲۳۰۸۱۱_۲۲۳۱۱۹.jpg" data-lightbox="gallery" data-title="تصویر ۴">
+                    <img src="images/۲۰۲۳۰۸۱۱_۲۲۳۱۱۹.jpg" alt="تصویر ۴">
+                </a>
+            </div>
+            <div class="gallery-item" data-category="moharram">
+                <a href="images/۲۰۲۳۰۸۱۷_۲۳۲۵۰۶.jpg" data-lightbox="gallery" data-title="تصویر ۵">
+                    <img src="images/۲۰۲۳۰۸۱۷_۲۳۲۵۰۶.jpg" alt="تصویر ۵">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
