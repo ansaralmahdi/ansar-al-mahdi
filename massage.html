@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیام‌های دریافتی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu-placeholder"></div>
+    <div class="content">
+        <h2>پیام‌های دریافتی</h2>
+        <div id="messagesList"></div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+        let messagesList = document.getElementById('messagesList');
+        messagesList.innerHTML = messages.length ? 
+            messages.map(msg => `<p><strong>${msg.name}</strong> (${msg.email}) در ${msg.date}: ${msg.message}</p>`).join('') : 
+            'هیچ پیامی یافت نشد.';
+    </script>
+</body>
+</html>
